@@ -13,6 +13,6 @@ class Star //note that this class does NOT extend Floater
   void show() { //Creates circles that are random color, location, size
     fill(myColor);
     stroke(myColor);
-    circle(myX, myY, mySize);
+    ellipse(myX, myY, mySize,mySize);
   }
 }
