@@ -27,13 +27,12 @@ public void draw()
   text("myXSpeed: " + nf(shippy.getXSpeed(),0,2),5,height/30*3);
   text("myYSpeed: " + nf(shippy.getYSpeed(),0,2),5,height/30*4);
   text("myPointDirection: " + nf(shippy.getDir(),0,2),5,height/30*5);
+  
+  shippy.move();
 }
 
 public void keyPressed() 
-{
-  if (keyCode == ENTER) { //Moves
-      shippy.move();
-    } 
+{ 
   if (keyCode == UP) { //Accelerates
       shippy.accelerate(.2);
     } 
