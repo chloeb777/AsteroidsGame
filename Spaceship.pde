@@ -1,5 +1,6 @@
 class Spaceship extends Floater  
 {   
+    private int myHealth;
     public Spaceship(){ //Initializes variables
       //Makes it a triangle ship:
       corners = 3;
@@ -13,6 +14,8 @@ class Spaceship extends Floater
       myCenterY = height/2;
       //Sets direction/speed to 0:
       myYspeed = myXspeed = myPointDirection = 0;
+      //Sets health to 100
+      myHealth = 100;
     }
     
     public void hyperspace() {
@@ -37,5 +40,11 @@ class Spaceship extends Floater
     }
     public float getYSpeed() {
       return (float)myYspeed;
+    }
+    public int getMyHealth() {
+      return myHealth;
+    }
+    public void loseHealth() {
+      myHealth--;
     }
 }
