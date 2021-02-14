@@ -1,12 +1,13 @@
 class Asteroid extends Floater  
 {   
-  private double myRspeed;
+  protected double myRspeed;
+  protected int radius;
     public Asteroid(){ //Initializes variables
-      //Makes it a triangle ship:
-      corners = 10;
+      radius = 10; //Big asteroid
+      corners = 10;  //Ten sided shape
       //Sets corners to the right proportions:
-      xCorners = new int[] {3,-3,-8,-10,-8,-3,3,8,10,8};  
-      yCorners = new int[] {-10,-10,-6,0,6,10,10,6,0,-6};   
+      xCorners = new int[] {3+((int)(Math.random()*4)-2),-3+((int)(Math.random()*4)-2),-8+((int)(Math.random()*4)-2),-10+((int)(Math.random()*4)-2),-8+((int)(Math.random()*4)-2),-3+((int)(Math.random()*4)-2),3+((int)(Math.random()*4)-2),8+((int)(Math.random()*4)-2),10+((int)(Math.random()*4)-2),8+((int)(Math.random()*4)-2)};
+      yCorners = new int[] {-10+((int)(Math.random()*4)-2),-10+((int)(Math.random()*4)-2),-6+((int)(Math.random()*4)-2),0+((int)(Math.random()*4)-2),6+((int)(Math.random()*4)-2),10+((int)(Math.random()*4)-2),10+((int)(Math.random()*4)-2),6+((int)(Math.random()*4)-2),0+((int)(Math.random()*4)-2),-6+((int)(Math.random()*4)-2)};   
       //Sets color to grey
       myColor = 200;
       //Sets starting position to the middle of the canvas:
@@ -18,23 +19,22 @@ class Asteroid extends Floater
       myRspeed = ((double)(Math.random())*3)-1.5;
       myPointDirection = 0;
     }
-    
+  
     public Asteroid(double n_,double m_){ //Second function to create asteroids outside of the box
-      //Makes it a triangle ship:
-      corners = 10;
+      radius = 10; //Big asteroid
+      corners = 10;  //Ten sided shape
       //Sets corners to the right proportions:
-      xCorners = new int[] {3,-3,-8,-10,-8,-3,3,8,10,8};  
-      yCorners = new int[] {-10,-10,-6,0,6,10,10,6,0,-6};   
+      xCorners = new int[] {3+((int)(Math.random()*4)-2),-3+((int)(Math.random()*4)-2),-8+((int)(Math.random()*4)-2),-10+((int)(Math.random()*4)-2),-8+((int)(Math.random()*4)-2),-3+((int)(Math.random()*4)-2),3+((int)(Math.random()*4)-2),8+((int)(Math.random()*4)-2),10+((int)(Math.random()*4)-2),8+((int)(Math.random()*4)-2)};
+      yCorners = new int[] {-10+((int)(Math.random()*4)-2),-10+((int)(Math.random()*4)-2),-6+((int)(Math.random()*4)-2),0+((int)(Math.random()*4)-2),6+((int)(Math.random()*4)-2),10+((int)(Math.random()*4)-2),10+((int)(Math.random()*4)-2),6+((int)(Math.random()*4)-2),0+((int)(Math.random()*4)-2),-6+((int)(Math.random()*4)-2)};
       //Sets color to grey
       myColor = 200;
-      //Sets starting position to the middle of the canvas:
+      //Sets starting position to n_ and m_:
       myCenterX = n_;
       myCenterY = m_;
       //Sets direction/speed to 0:t
       myYspeed = ((double)(Math.random())*3)-1.5;
       myXspeed = ((double)(Math.random())*3)-1.5;
       myRspeed = ((double)(Math.random())*3)-1.5;
-      myPointDirection = 0;
     }
     
     
@@ -53,5 +53,9 @@ class Asteroid extends Floater
     }
     public float getY() {
       return (float)myCenterY;
-    }}
+    }
+    public int getRadius() {
+      return radius;
+    }
+}
     
